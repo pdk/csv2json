@@ -12,6 +12,7 @@ import (
 func main() {
 
 	reader := csv.NewReader(os.Stdin)
+	reader.FieldsPerRecord = -1
 
 	var headers []string
 	var data []map[string]string
