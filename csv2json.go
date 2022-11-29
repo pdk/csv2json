@@ -31,10 +31,12 @@ func main() {
 			headers = record
 		} else {
 			vals := map[string]string{}
-			for j := 0; j < len(headers); j++ {
+			for j := 0; j < len(record) && j < len(headers); j++ {
 				vals[headers[j]] = record[j]
 			}
-			data = append(data, vals)
+			if len(vals) > 0 {
+				data = append(data, vals)
+			}
 		}
 	}
 
